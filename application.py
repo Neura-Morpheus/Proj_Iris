@@ -34,7 +34,7 @@ def predict():
 
 @app.route("/hi")
 def hello():
-    return "Hello, World!"
+    return "Hello Teams 12ABD!"
 
 @app.route("/list")
 def hello_test():

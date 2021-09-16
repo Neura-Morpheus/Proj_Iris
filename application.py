@@ -36,6 +36,10 @@ def predict():
 def about():
     return render_template('about.html')
 
+@app.route("/contact")
+def contact():
+    return render_template('contact.html')
+
 @app.route("/list")
 def hello_test():
     ls_list = os.listdir()

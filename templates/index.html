@@ -1,22 +1,333 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="pt-br">
 
-    <body>
+<head>
+    <title>Iris Project</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-        <form id="create" method="POST" action=/predict>
-            <label for="fname">sepal_length_cm:</label><br>
-            <input type="text" id="fname" name="sepal_length_cm"><br>
-            <label for="lname">sepal_width_cm:</label><br>
-            <input type="text" id="lname" name="sepal_width_cm"><br>
-            <label for="fname">petal_length_cm:</label><br>
-            <input type="text" id="fname" name="petal_length_cm"><br>
-            <label for="lname">petal_width_cm:</label><br>
-            <input type="text" id="lname" name="petal_width_cm">
-            <input type="submit" id="submit-button" value="Submit">
-            <div id=created></div>
-        </form>
-        </script>
+    <link href="https://fonts.googleapis.com/css?family=DM+Sans:300,400,700&display=swap" rel="stylesheet">
 
-    </body>
+    <link rel="stylesheet" href="fonts/icomoon/style.css">
+
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap-datepicker.css">
+    <link rel="stylesheet" href="css/jquery.fancybox.min.css">
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <link rel="stylesheet" href="css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="fonts/flaticon/font/flaticon.css">
+    <link rel="stylesheet" href="css/aos.css">
+
+    <!-- MAIN CSS -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <script type="text/javascript">
+        function post(path, parameters) {
+
+            const form = document.createElement('form');
+            form.method = method;
+            form.action = path;
+
+            for(const key in params) {
+                if (params.hasOwnProperty(key)) {
+                    const sepal_length = document.createElement('input');
+                    sepal_length.type = 'number';
+                    sepal_length.name = key;
+                    sepal_length.value = params[key];
+
+                    form.appendChild(sepal_length);
+                }
+            }
+
+            document.body.appendChild(form);
+            form.submit();
+        }
+    </script>
+</head>
+
+<body data-spy="scroll" data-target=".site-navbar-target" data-offset="300" onload="javascript:document.myform.submit()">
+
+
+    <div class="site-wrap" id="home-section">
+
+        <div class="site-mobile-menu site-navbar-target">
+            <div class="site-mobile-menu-header">
+                <div class="site-mobile-menu-close mt-3">
+                    <span class="icon-close2 js-menu-toggle"></span>
+                </div>
+            </div>
+            <div class="site-mobile-menu-body"></div>
+        </div>
+
+        <header class="site-navbar site-navbar-target" role="banner">
+
+            <div class="container">
+                <div class="row align-items-center position-relative">
+
+                    <div class="col-3 ">
+                        <div class="site-logo">
+                            <a href="index.html">Iris Project</a>
+                        </div>
+                    </div>
+                    <div class="col-9  text-right">
+                        <span class="d-inline-block d-lg-none"><a href="#" class="text-white site-menu-toggle js-menu-toggle py-5 text-white"><span class="icon-menu h3 text-white"></span></a></span>
+
+                        <nav class="site-navigation text-right ml-auto d-none d-lg-block" role="navigation">
+                            <ul class="site-menu main-menu js-clone-nav ml-auto ">
+                                <li class="active"><a href="index.html" class="nav-link">Home</a></li>
+                                <li><a href="about.html" class="nav-link">Sobre</a></li>
+                                <!--<li><a href="blog.html" class="nav-link">Blog</a></li>-->
+                                <li><a href="contact.html" class="nav-link">Contato</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <div class="ftco-blocks-cover-1 bg-light">
+            <div class="ftco-cover-1 overlay" style="background-image: url('images/purple-irises.jpg') ">
+                <div class="container">
+                    <div class="row align-items-center">
+                        <div class="col-lg-7">
+                            <div class="feature-car-rent-box-1">
+                                <br /><br /><br />
+
+                                <form class="trip-form bg-light" id="input" method="post" action="https://storage.googleapis.com/iris-site/index.html">
+                                    <h3>Insira os dados a seguir</h3>
+                                    <div class="row">
+                                        <div class="form-group col-md-6">
+                                            <label for="sepal_length">Comprimento da sépala</label>
+                                            <input type="number" class="form-control" id="sepal_length" placeholder="em centimetros" name="sepal_length_cm" value="666">
+                                        </div>
+                                        <div class="form-group col-md-6">
+                                            <label for="sepal_width">Largura da sépala</label>
+                                            <input type="number" class="form-control" id="sepal_width" placeholder="em centimetros" name="sepal_width_cm" value="666">
+                                        </div>
+                                        <div class="form-group col-md-6">
+                                            <label for="petal_length">Comprimento da pétala</label>
+                                            <input type="number" class="form-control" id="petal_length" placeholder="em centimetros" name="petal_length_cm" value="666">
+                                        </div>
+                                        <div class="form-group col-md-6">
+                                            <label for="petal_width">Largura da pétala</label>
+                                            <input type="number" class="form-control" id="petal_width" placeholder="em centimetros" name="petal_width_cm" value="666">
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-lg-6">
+                                            <input type="submit" value="Submit" class="btn btn-primary">
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="site-section pt-0 pb-0">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+
+                        <form class="trip-form">
+                            <div class="row align-items-center mb-4">
+                                <div class="col-md-6">
+                                    <h3 class="m-0">Resultado a seguir</h3>
+                                </div>
+                                <div class="col-md-6 text-md-right">
+                                    <span class="text-primary">32</span> <span>iris similares</span>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-4 mb-5 mb-lg-0 order-lg-2">
+                                    <div class="col-xs-12 text-center">
+                                        <h2>Iris Versicolour</h2>
+                                    </div>
+
+                                    <img src="images/versicolour.jpg" alt="Image" >
+                                </div>
+
+                                <div class="col-lg-4 mb-5 mb-lg-0 order-lg-2">
+                                    <div class="col-xs-12 text-center">
+                                        <h2>Iris Setosa</h2>
+                                    </div>
+
+                                    <img src="images/setosa.jpg" alt="Image" >
+                                </div>
+
+                                <div class="col-lg-4 mb-5 mb-lg-0 order-lg-2">
+                                    <div class="col-xs-12 text-center">
+                                        <h2>Iris Virginica</h2>
+                                    </div>
+                                    <img src="images/virginica.jpg" alt="Image" >
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container site-section mb-5">
+            <div class="row justify-content-center text-center">
+                <div class="col-7 text-center mb-5">
+                    <h2>Como funciona?</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo assumenda, dolorum necessitatibus eius earum voluptates sed!</p>
+                </div>
+            </div>
+            <div class="how-it-works d-flex">
+                <div class="step">
+                    <span class="number"><span>01</span></span>
+                    <span class="caption">Sépala &amp; Pétala</span>
+                </div>
+                <div class="step">
+                    <span class="number"><span>02</span></span>
+                    <span class="caption">Análise</span>
+                </div>
+                <div class="step">
+                    <span class="number"><span>03</span></span>
+                    <span class="caption">Comparação</span>
+                </div>
+                <div class="step">
+                    <span class="number"><span>04</span></span>
+                    <span class="caption">Propabilidade</span>
+                </div>
+                <div class="step">
+                    <span class="number"><span>05</span></span>
+                    <span class="caption">Indentifica</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="site-section bg-light">
+            <div class="container">
+                <div class="row justify-content-center text-center mb-5">
+                    <div class="col-7 text-center mb-5">
+                        <h2>Depoimento dos Usuários</h2>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo assumenda, dolorum necessitatibus eius earum voluptates sed!</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-4 mb-4 mb-lg-0">
+                        <div class="testimonial-2">
+                            <blockquote class="mb-4">
+                                <p>"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem, deserunt eveniet veniam. Ipsam, nam, voluptatum"</p>
+                            </blockquote>
+                            <div class="d-flex v-card align-items-center">
+                                <img src="images/person_1.jpg" alt="Image" class="img-fluid mr-3">
+                                <span>Mike Fisher</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 mb-4 mb-lg-0">
+                        <div class="testimonial-2">
+                            <blockquote class="mb-4">
+                                <p>"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem, deserunt eveniet veniam. Ipsam, nam, voluptatum"</p>
+                            </blockquote>
+                            <div class="d-flex v-card align-items-center">
+                                <img src="images/person_2.jpg" alt="Image" class="img-fluid mr-3">
+                                <span>Jean Stanley</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 mb-4 mb-lg-0">
+                        <div class="testimonial-2">
+                            <blockquote class="mb-4">
+                                <p>"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem, deserunt eveniet veniam. Ipsam, nam, voluptatum"</p>
+                            </blockquote>
+                            <div class="d-flex v-card align-items-center">
+                                <img src="images/person_3.jpg" alt="Image" class="img-fluid mr-3">
+                                <span>Katie Rose</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <footer class="site-footer">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-3">
+                        <h2 class="footer-heading mb-4">Sobre nós</h2>
+                        <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. </p>
+                    </div>
+                    <div class="col-lg-8 ml-auto">
+                        <div class="row">
+                            <div class="col-lg-3">
+                                <h2 class="footer-heading mb-4">Links rápidos</h2>
+                                <ul class="list-unstyled">
+                                    <li><a href="#">Sobre nós</a></li>
+                                    <li><a href="#">Depoimentos</a></li>
+                                    <li><a href="#">Termos de serviço</a></li>
+                                    <li><a href="#">Privacidade</a></li>
+                                    <li><a href="#">Fale conosco</a></li>
+                                </ul>
+                            </div>
+                            <div class="col-lg-3">
+                                <h2 class="footer-heading mb-4">Links rápidos</h2>
+                                <ul class="list-unstyled">
+                                    <li><a href="#">Sobre nós</a></li>
+                                    <li><a href="#">Depoimentos</a></li>
+                                    <li><a href="#">Termos de serviço</a></li>
+                                    <li><a href="#">Privacidade</a></li>
+                                    <li><a href="#">Fale conosco</a></li>
+                                </ul>
+                            </div>
+                            <div class="col-lg-3">
+                                <h2 class="footer-heading mb-4">Links rápidos</h2>
+                                <ul class="list-unstyled">
+                                    <li><a href="#">Sobre nós</a></li>
+                                    <li><a href="#">Depoimentos</a></li>
+                                    <li><a href="#">Termos de serviço</a></li>
+                                    <li><a href="#">Privacidade</a></li>
+                                    <li><a href="#">Fale conosco</a></li>
+                                </ul>
+                            </div>
+                            <div class="col-lg-3">
+                                <h2 class="footer-heading mb-4">Links rápidos</h2>
+                                <ul class="list-unstyled">
+                                    <li><a href="#">Sobre nós</a></li>
+                                    <li><a href="#">Depoimentos</a></li>
+                                    <li><a href="#">Termos de serviço</a></li>
+                                    <li><a href="#">Privacidade</a></li>
+                                    <li><a href="#">Fale conosco</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row pt-5 mt-5 text-center">
+                    <div class="col-md-12">
+                        <div class="border-top pt-5">
+                            <p>
+                                Copyright &copy;
+                                <script>document.write(new Date().getFullYear());</script> Todos os direitos reservados | Este templete foi feito de <i class="icon-heart text-danger" aria-hidden="true"></i> por <a href="https://github.com/Neura-Morpheus" target="_blank">Neura Morpheus</a>
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="js/jquery.sticky.js"></script>
+    <script src="js/jquery.waypoints.min.js"></script>
+    <script src="js/jquery.animateNumber.min.js"></script>
+    <script src="js/jquery.fancybox.min.js"></script>
+    <script src="js/jquery.easing.1.3.js"></script>
+    <script src="js/bootstrap-datepicker.min.js"></script>
+    <script src="js/aos.js"></script>
+
+    <script src="js/main.js"></script>
+
+</body>
 
 </html>

@@ -32,9 +32,9 @@ def predict():
     except Exception as e:
         return make_response(str(e), 500)
 
-@app.route("/hi")
-def hello():
-    return "Hello Teams 12ABD!"
+@app.route("/about")
+def about():
+    return render_template('about.html')
 
 @app.route("/list")
 def hello_test():
